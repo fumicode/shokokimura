@@ -1,0 +1,25 @@
+@import "neat/neat";
+
+section {
+    @include outer-container;
+    text-align: center;
+    margin-bottom: 3em;
+
+
+
+    div.grid {
+        @include media(769px){
+            @include span-columns(4);
+        }
+        @include media(max-width 768px){
+            margin-bottom: 3em;
+        }
+            height: 300px;
+
+            
+
+            
+        
+    }
+
+}
