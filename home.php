@@ -1,6 +1,10 @@
 <?php
 
+
 get_header('home'); ?>
+
+
+
 
 <section>
 <div class="grid">image

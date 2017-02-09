@@ -6,17 +6,21 @@ function theme_enqueue_styles() {
 
 }
 
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
-  register_post_type( 'home_product',
-    array(
-      'labels' => array(
-        'name' => __( 'Home Products' ),
-        'singular_name' => __( 'Product' )
-      ),
-      'public' => true,
-      'supports' => [null],
-      'has_archive' => true,
-    )
-  );
+// child-pages-shortcodeのカスタマイズ、padding-top付与
+add_filter("child-pages-shortcode-template", "my_filter");
+function my_filter($template) {
+    // do something
+    $template = <<< EOF
+    <div id="child_page-%post_id%" class="child_page" style="width:%width%;">
+    <div class="child_page-container">
+        <div class="post_thumb"><a href="%post_url%">%post_thumb%</a></div>
+        <div class="post_content" style="padding-top:15px;">
+            <h4><a href="%post_url%">%post_title%</a></h4>
+            <div class="post_excerpt">%post_excerpt%</div>
+        </div>
+    </div>
+</div>
+EOF;
+    return $template;
 }
+
