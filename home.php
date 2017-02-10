@@ -53,7 +53,16 @@ make_grid();
 
 </section>
 <?php endif; ?>
-
+<?php if ( $post_counter % 3 == 1  && $post_counter > 3 &&  $post_counter == $the_query->found_posts) : ?>
+<section>
+<?php make_grid() ?>
+</section>
+<?php endif; ?>
+<?php if ( $post_counter % 3 == 2  && $post_counter > 3 && $post_counter == $the_query->found_posts) : ?>
+<section>
+<?php make_grid() ?>
+</section>
+<?php endif; ?>
 <?php $post_counter++; ?>
 
 	<?php endwhile; ?>
