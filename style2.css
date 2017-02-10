@@ -14,18 +14,21 @@ section {
     clear: both;
     content: "";
     display: block; }
-  section div.grid {
-    height: 300px; }
-    @media screen and (min-width: 769px) {
-      section div.grid {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 31.76157%; }
-        section div.grid:last-child {
-          margin-right: 0; } }
-    @media screen and (max-width: 768px) {
-      section div.grid {
-        margin-bottom: 3em; } }
+  @media screen and (min-width: 769px) {
+    section div.grid {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      section div.grid:last-child {
+        margin-right: 0; } }
+  @media screen and (max-width: 768px) {
+    section div.grid {
+      margin-bottom: 3em;
+      height: 500px; } }
+  @media screen and (max-width: 400px) {
+    section div.grid {
+      margin-bottom: 3em;
+      height: 300px; } }
 
 /*# sourceMappingURL=style2.css.map */
