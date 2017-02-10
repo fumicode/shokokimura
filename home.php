@@ -19,54 +19,49 @@ $the_query = new WP_Query( $args ); ?>
 
 	<!-- pagination here -->
 
-	<!-- the loop -->
-	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-        
 <?php
+        if ($the_query->found_posts <= 3) : ?>
+<!-- the loop -->
+    <section>
+<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+       
 
-if ($post_counter % 3 == 1 && $post_counter !== $the_query->found_posts) : ?>
-
-
-<section>
-<?php
-make_grid();
-?>
-<?php
-
-endif; ?>
-<?php
-if ($post_counter % 3 == 2 && $post_counter !== $the_query->found_posts) : ?>
-           
 <?php
 
 make_grid();
 
+$post_counter++;
+
 ?>
-
-<?php endif; ?>
-<?php
-if ($post_counter % 3 == 0 || $post_counter == $the_query->found_posts) : ?>
-           
-<?php
-make_grid();
-?>
-
-</section>
-<?php endif; ?>
-<?php if ( $post_counter % 3 == 1  && $post_counter > 3 &&  $post_counter == $the_query->found_posts) : ?>
-<section>
-<?php make_grid() ?>
-</section>
-<?php endif; ?>
-<?php if ( $post_counter % 3 == 2  && $post_counter > 3 && $post_counter == $the_query->found_posts) : ?>
-<section>
-<?php make_grid() ?>
-</section>
-<?php endif; ?>
-<?php $post_counter++; ?>
-
 	<?php endwhile; ?>
-	<!-- end of the loop -->
+</section>
+<?php else: ?>
+
+<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>      
+<?php
+
+if ($post_counter % 3 == 1){
+    echo "<section>";
+    make_grid();
+    if ($post_counter == $the_query->found_posts){
+        echo "</section>";
+    }
+} else if ($post_counter % 3 == 2 && $post_counter !== $the_query->found_posts){
+    make_grid();
+    if ($post_counter == $the_query->found_posts){
+        echo "</section>";
+    }
+} else if ($post_counter % 3 == 0){
+    make_grid();
+    echo "</section>";
+}
+
+?>
+
+<?php $post_counter++; ?>
+	<?php endwhile; ?>
+<?php endif; ?>
+
 
 	<!-- pagination here -->
 
