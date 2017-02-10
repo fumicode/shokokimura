@@ -60,16 +60,21 @@ function vainglory_shopitem() {
 }
 
 function make_grid(){
-    echo '<div class="grid">';
+
+    
     $product_meta = get_post_meta(get_the_ID());
 
     $product_id = $product_meta['product-url'][0];
 
+    $url = get_permalink($product_id);
     $product = get_post_meta($product_id);
+    
+    echo "<div class='grid'>";
     echo get_post($product_id)->post_title;
+    echo "<a href=$url style='display:block;'>";
     echo get_the_post_thumbnail($product_id);
 
-    echo "</div>";
+    echo "</a></div>";
 
     return 0;
 }
