@@ -54,7 +54,7 @@
                         <!-- Swiper -->
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="http://blog.bot.vc/wp-content/uploads/2012/10/about_01.jpeg" />
+                                <div class="swiper-slide"><img src="http://shokokimura.fumicode.com/wp-content/uploads/2017/01/espresso-e1486707419913.jpg" />
                                 </div>
                                 
                                 <div class="swiper-slide"><img src="http://blog.bot.vc/wp-content/uploads/2012/10/about_01.jpeg" />
