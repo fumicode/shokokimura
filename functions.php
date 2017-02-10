@@ -39,7 +39,7 @@ function vainglory_shopitem() {
         "label" => "Home Product",
         "labels" => $labels,
         "description" => "Show product in the home page.",
-        "public" => false, //一般公開しない
+        "public" => true, //一般公開しない
         "show_ui" => true,
         "has_archive" => false,
         "show_in_menu" => true,
