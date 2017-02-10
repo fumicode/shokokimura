@@ -54,15 +54,10 @@
                         <!-- Swiper -->
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="http://vccw.dev/wp-content/uploads/2017/02/cropped-bikkuro-1.jpg" />
+                                <div class="swiper-slide"><img src="http://blog.bot.vc/wp-content/uploads/2012/10/about_01.jpeg" />
                                 </div>
                                 
-                                <div class="swiper-slide">
-                                    <img src="http://vccw.dev/wp-content/uploads/2017/02/cropped-bikkuro-1.jpg" />
-                                </div>
-                                
-                                <div class="swiper-slide"><img src="http://vccw.dev/wp-content/uploads/2017/02/cropped-bikkuro-1.jpg" />
+                                <div class="swiper-slide"><img src="http://blog.bot.vc/wp-content/uploads/2012/10/about_01.jpeg" />
                                 </div>
                             </div>
                             <!-- Add Pagination -->

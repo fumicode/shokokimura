@@ -24,3 +24,52 @@ EOF;
     return $template;
 }
 
+
+add_action( 'init', 'vainglory_shopitem' ); //アクションをフック
+
+//フックされたアクション
+function vainglory_shopitem() {
+    $labels = array(
+        "name" => "Home Product", //投稿タイプの一般名
+        "singular_name" => "Home", //投稿タイプのオブジェクト 1 個の名前（単数形）
+        "all_items" => "Home Product list",
+        );
+
+    $args = array(
+        "label" => "Home Product",
+        "labels" => $labels,
+        "description" => "Show product in the home page.",
+        "public" => false, //一般公開しない
+        "show_ui" => true,
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "exclude_from_search" => false, //タクソノミーをセットするのでfalse
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false, //固定ページではない
+        "rewrite" => false,
+        "query_var" => true,
+
+        "supports" => array(
+            "title",
+
+        ),
+    );
+
+    register_post_type( "home", $args ); //カスタム投稿タイプの登録
+}
+
+function make_grid(){
+    echo '<div class="grid">';
+    $product_meta = get_post_meta(get_the_ID());
+
+    $product_id = $product_meta['product-url'][0];
+
+    $product = get_post_meta($product_id);
+    echo get_post($product_id)->post_title;
+    echo get_the_post_thumbnail($product_id);
+
+    echo "</div>";
+
+    return 0;
+}
