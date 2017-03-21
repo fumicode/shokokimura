@@ -78,3 +78,5 @@ function make_grid(){
 
     return 0;
 }
+
+add_editor_style('editor-style.css'); 

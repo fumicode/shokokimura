@@ -41,3 +41,8 @@ font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdan
 }
 
 
+.site-header {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
