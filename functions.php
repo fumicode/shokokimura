@@ -79,4 +79,6 @@ function make_grid(){
     return 0;
 }
 
-add_editor_style('editor-style.css'); 
+add_editor_style('editor-style.css');
+
+add_image_size( 'large', 300, 400, true );
