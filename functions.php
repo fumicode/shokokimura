@@ -81,4 +81,4 @@ function make_grid(){
 
 add_editor_style('editor-style.css');
 
-add_image_size( 'large', 300, 400, true );
+add_image_size( 'large', 800, 600, true );
